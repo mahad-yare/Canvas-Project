@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- compiled for Fonts and Icons -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+    integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- compiled and minified bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<!-- custom CSS -->
+<link href="./assets/css/creative.css" rel="stylesheet" type='text/css'>
+
+<head>
+    <title>Canvas Template</title>
+</head>
+
+<body>
+
+    <header>
+        <section class="header-section">
+            <div>
+
+            </div>
+        </section>
+    </header>
+
+    <!-- canvas -->
+    <section>
+        <div id="canvas-container">
+            <canvas id="canvas-real" class="canvas" width='1280px' height='720px'></canvas>
+            <canvas id="canvas-draft" class="canvas" width='1280px' height='720px'></canvas>
+        </div>
+
+    </section>
+
+
+    <section>
+        <!-- left tool-bar -->
+        <div id="tool-bar">
+            <div id="Draw" class="press-btn">
+                <i class="fas fa-pencil-alt" title="Pencil"></i>
+            </div>
+
+            <div id="Straightline" class="press-btn" title="Straight line">
+                <i class="material-icons" title="Straight line">timeline</i>
+            </div>
+
+            <div id="Rectangle" class="press-btn" title="Rectangle">
+                <i class="far fa-square"></i>
+            </div>
+
+            <div id="Circle" class="press-btn">
+                <i class="far fa-circle" title="Circle"></i>
+            </div>
+
+            <div id="Polygon" class="press-btn" title="Polygon">
+                <i class="fas fa-draw-polygon"></i>
+            </div>
+
+            <div id="Eraser" class="press-btn" title="Eraser">
+                <i class="fas fa-eraser"></i>
+            </div>
+
+            <div id="Fill-up" class="press-btn" title="Fill-up">
+                <i class="fas fa-fill-drip"></i>
+            </div>
+
+            <div id="Undo" class="press-btn" title="Undo">
+                <i class="fas fa-undo"></i>
+            </div>
+
+            <div id="Redo" class="press-btn" title="Redo">
+                <i class="fas fa-redo"></i>
+            </div>
+
+            <div id="Clear" class="press-btn" title="Clear all">
+                <i class="material-icons">clear</i>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+    <!-- jquery core -->
+    <script type='text/javascript' src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <!-- the compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <!-- custom script -->
+    <script type='text/javascript' src="./assets/script/canvas-common.js"></script>
+    <script type='text/javascript' src="./assets/script/drawing-line.js"></script>
+    <script type='text/javascript' src="./assets/script/drawing-rectangle.js"></script>
+    <script type='text/javascript' src="./assets/script/drawing-circle.js"></script>
+
+    <script type='text/javascript'>
+
+        $('#drawing-rectangle').click(() => {
+            currentFunction = new DrawingRectangle(contextReal, contextDraft);
+        });
+        $('#drawing-line').click(() => {
+            currentFunction = new DrawingLine(contextReal, contextDraft);
+        });
+        $('#drawing-circle').click(() => {
+            currentFunction = new DrawingCircle(contextReal, contextDraft);
+        });
+
+        $('#drawing-rectangle').click(() => {
+            currentFunction = new DrawingPolygon(contextReal, contextDraft);
+        });
+        $('#drawing-line').click(() => {
+            currentFunction = new Drawing(contextReal, contextDraft);
+        });
+        $('#drawing-circle').click(() => {
+            currentFunction = new Drawing(contextReal, contextDraft);
+        });
+
+        $('#drawing-rectangle').click(() => {
+            currentFunction = new Drawing(contextReal, contextDraft);
+        });
+        $('#drawing-line').click(() => {
+            currentFunction = new Drawing(contextReal, contextDraft);
+        });
+        $('#drawing-circle').click(() => {
+            currentFunction = new Drawing(contextReal, contextDraft);
+        });
+
+
+
+
+        // currentFunction = new DrawingRectangle(contextReal, contextDraft);
+
+        // currentFunction = new DrawingLine(contextReal, contextDraft);
+
+        // currentFunction = new DrawingCircle(contextReal, contextDraft);
+
+
+
+        <div>
+            <button type="button" class="btn btn-default btn-circle btn-xl"><i class="fa fa-square"></i>
+            </button>
+            <button type="button" class="btn btn-primary btn-circle btn-xl"><i class="fa fa-list"></i>
+            </button>
+            <button type="button" class="btn btn-success btn-circle btn-xl"><i class="fa fa-link"></i>
+            </button>
+            <button type="button" class="btn btn-info btn-circle btn-xl"><i class="fa fa-check"></i>
+            </button>
+            <button type="button" class="btn btn-warning btn-circle btn-xl"><i class="fa fa-times"></i>
+            </button>
+            <button type="button" class="btn btn-danger btn-circle btn-xl"><i class="fa fa-heart"></i>
+            </button>
+        </div>
+
+    </script>
+
+</body>
+
+</html>
